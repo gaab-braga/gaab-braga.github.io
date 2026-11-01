@@ -72,7 +72,9 @@ article p, section > p { margin: 4px 0 0; }
 
 ul { margin: 6px 0 0; padding-left: 20px; }
 li { margin-bottom: 4px; }
-.cursos { list-style: none; padding-left: 0; }
+.certificados, .ferramentas { list-style: none; padding-left: 0; }
+.certificados > li { margin-bottom: 8px; }
+.certificados ul { font-size: 14px; color: var(--suave); }
 
 footer { margin-top: 28px; font-size: 12px; color: var(--suave); }
 
@@ -84,21 +86,26 @@ footer { margin-top: 28px; font-size: 12px; color: var(--suave); }
 }
 
 @media print {
-  @page { size: A4; margin: 10mm 14mm; }
-  body { padding: 0; background: #fff; font-size: 9.5pt; line-height: 1.4; }
+  @page { size: A4; margin: 13mm; }
+  body { padding: 0; background: #fff; font-size: 10pt; line-height: 1.35; }
   main { max-width: none; padding: 0; border: 0; }
-  .imprimir { display: none; }
-  h1 { font-size: 20pt; }
-  h2 { margin: 10px 0 5px; font-size: 9pt; }
-  h3, .data, .nota, .contatos { font-size: 9.5pt; }
-  article { margin-bottom: 6px; }
-  ul { margin-top: 3px; }
-  li { margin-bottom: 1px; }
+  /* O PDF fica com 1 página: o que é só da web não sai na impressão. */
+  .imprimir, .so-web { display: none; }
+  h1 { font-size: 18pt; }
+  .cargo { margin: 2px 0 4px; }
+  h2 { margin: 8px 0 3px; padding-bottom: 2px; font-size: 9pt; }
+  header { position: static; }
+  h3, .data, .nota, .contatos, .certificados ul { font-size: 10pt; }
+  article { margin-bottom: 4px; }
+  ul { margin-top: 2px; }
+  li, .certificados > li { margin-bottom: 1px; }
   footer { margin-top: 10px; }
-  /* Na impressão, os cursos de cada trilha viram uma linha corrida. */
-  #cursos ~ article ul { padding-left: 0; list-style: none; }
-  #cursos ~ article li { display: inline; }
-  #cursos ~ article li:not(:last-child)::after { content: " · "; }
   article, li { break-inside: avoid; }
+  /* Projetos, prêmios e ferramentas viram linhas corridas para caber em 1 página. */
+  .projetos h3, .projetos p { display: inline; }
+  .projetos h3::after { content: " · "; font-weight: normal; }
+  .corrida { padding-left: 0; list-style: none; }
+  .corrida li { display: inline; }
+  .corrida li:not(:last-child)::after { content: " · "; }
   a { color: var(--texto); }
 }
