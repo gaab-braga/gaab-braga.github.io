@@ -91,7 +91,7 @@ footer { margin-top: 28px; font-size: 12px; color: var(--suave); }
   h1 { font-size: 20pt; }
   h2 { margin: 10px 0 5px; font-size: 9pt; }
   h3, .data, .nota, .contatos { font-size: 9.5pt; }
-  article { margin-bottom: 8px; }
+  article { margin-bottom: 6px; }
   ul { margin-top: 3px; }
   li { margin-bottom: 1px; }
   footer { margin-top: 10px; }
