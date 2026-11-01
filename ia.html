@@ -28,7 +28,7 @@
 
 <section>
   <h2>Resumo</h2>
-  <p>Analista de dados com projetos de machine learning e IA generativa: experimentos com scikit-learn e XGBoost comparados a um baseline por métricas adequadas (precisão, recall, AUC), agente com LLM que chama funções Python e avaliação de respostas de agente por script. Python, SQL, Git, FastAPI e Docker.</p>
+  <p>Analista de dados com projetos de machine learning e IA generativa: experimentos com scikit-learn e XGBoost comparados a um baseline por métricas adequadas (precisão, recall, AUC), agente com LLM que chama funções Python, RAG com embeddings e avaliação de respostas por script. Python, SQL, Git, FastAPI e Docker.</p>
 </section>
 
 <section>
@@ -81,11 +81,16 @@
   </article>
 
   <article>
+    <h3><a href="https://github.com/gaab-braga/chatbot-whatsapp">chatbot-whatsapp</a></h3>
+    <p>Atendimento no WhatsApp com RAG (embeddings do sentence-transformers e índice FAISS) e gpt-4o-mini pela API da OpenAI, em Flask e Redis, com handoff para atendente. 39 testes com pytest; na avaliação da busca, o trecho certo fica entre os 3 primeiros em 20 de 25 perguntas (base fictícia).</p>
+  </article>
+
+  <article>
     <h3><a href="https://github.com/gaab-braga/aml-transaction-monitoring">aml-transaction-monitoring</a></h3>
     <p>Lavagem de dinheiro em 5 milhões de transações (base pública IBM HI-Small, 0,18% de lavagem no teste). XGBoost com validação temporal: PR-AUC 0,389 (acaso: 0,002), precisão de 0,98 nas 100 maiores notas e recall de 0,81 com 5% de falsos positivos. API em FastAPI, Docker e CI.</p>
   </article>
 
-  <article>
+  <article class="so-web">
     <h3><a href="https://github.com/gaab-braga/credit-risk-pipeline">credit-risk-pipeline</a></h3>
     <p>Crédito PF do SQL ao modelo, com pipeline do scikit-learn sem vazamento. AUC 0,795 no teste; a acurácia fica de fora porque um baseline que só diz "não vai dar calote" já acerta 92%.</p>
   </article>
@@ -163,7 +168,7 @@
   <h2>Ferramentas e idiomas</h2>
   <ul class="ferramentas corrida">
     <li><b>ML e estatística:</b> scikit-learn (validação cruzada e temporal, precisão, recall, AUC), XGBoost, SHAP, statsmodels, TensorFlow</li>
-    <li><b>IA generativa:</b> Gemini com Google ADK, tool calling, avaliação de respostas por script</li>
+    <li><b>IA generativa:</b> API da OpenAI, Gemini com Google ADK, tool calling, RAG com sentence-transformers e FAISS, avaliação de respostas por script</li>
     <li><b>Dados e engenharia:</b> Python (pandas, NumPy), SQL, PySpark, Git, pytest, FastAPI, Docker</li>
     <li><b>Idiomas:</b> português nativo, inglês com fluência profissional</li>
   </ul>
