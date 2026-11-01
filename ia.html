@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriel Braga · Currículo (ML e IA)</title>
+<meta name="description" content="Currículo de Gabriel Braga, analista de dados com projetos de machine learning e IA generativa, em Brasília.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Gabriel Braga · Currículo (ML e IA)">
+<meta property="og:description" content="Analista de dados com projetos de machine learning e IA generativa: experimentos com scikit-learn, agente com LLM e avaliação de respostas.">
+<meta property="og:url" content="https://gaab-braga.github.io/ia.html">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Gabriel Braga</h1>
+  <p class="cargo">Analista de dados · Machine learning e IA generativa · Brasília, DF</p>
+  <p class="contatos">
+    <a href="mailto:gafebraga@gmail.com">gafebraga@gmail.com</a>
+    <a href="https://github.com/gaab-braga">github.com/gaab-braga</a>
+    <a href="https://www.linkedin.com/in/gabrielfebraga">linkedin.com/in/gabrielfebraga</a>
+  </p>
+  <button type="button" class="imprimir" onclick="window.print()">Salvar em PDF</button>
+</header>
+
+<section>
+  <h2>Resumo</h2>
+  <p>Analista de dados com projetos de machine learning e IA generativa: experimentos com scikit-learn e XGBoost comparados a um baseline por métricas adequadas (precisão, recall, AUC), agente com LLM que chama funções Python e avaliação de respostas de agente por script. Python, SQL, Git, FastAPI e Docker.</p>
+</section>
+
+<section>
+  <h2>Experiência</h2>
+
+  <article>
+    <div class="linha">
+      <h3>Analista de Inteligência e Performance · Concept IaaS (Wiz Co)</h3>
+      <span class="data">fev/2026 – atual</span>
+    </div>
+    <p class="nota so-web">Estruturação da área de FP&amp;A.</p>
+    <ul>
+      <li>Avaliei um agente de IA (uma skill do Claude Code) em 3 cenários, com 3 execuções de cada, com e sem a skill, e corrigi as respostas por script: 92% de acerto com a skill e 83% sem.</li>
+      <li>Rodei experimentos de forecast por backtest no tempo (WAPE e MASE contra um baseline ingênuo): o gradient boosting perdeu em 8 de 8 linhas da DRE, e documentei a decisão.</li>
+      <li>Construí em Python o pipeline da DRE gerencial, com testes que conferem 17.280 células por ano contra a planilha.</li>
+      <li class="so-web">Apresento os resultados em painéis de metas no padrão IBCS, usados nas reuniões quinzenais da diretoria.</li>
+      <li class="so-web">Automatizei estoque (XML de NF-e) e títulos de pagamento em Python, Power Query e VBA: de 2 dias úteis para uma tarde.</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Analista de Dados · Ministério das Relações Exteriores</h3>
+      <span class="data">abr/2025 – fev/2026</span>
+    </div>
+    <ul>
+      <li>Automatizei processos com Python (pandas) e Power Automate: SLA de atendimento de 3 dias para 4 horas.</li>
+      <li>Construí dashboards de execução orçamentária em Power BI para a contabilidade (COF): de 4 dias para minutos.</li>
+      <li>Cuidei da qualidade das bases financeiras e contábeis com consultas SQL e modelos no Dataverse.</li>
+    </ul>
+  </article>
+
+  <article class="so-web">
+    <div class="linha">
+      <h3>Freelance de analytics (Meta Ads) · Brasal</h3>
+      <span class="data">dez/2025</span>
+    </div>
+    <ul>
+      <li>Montei dashboards de indicadores de campanha (ROAS, CPA, CTR) e de desempenho dos criativos.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="projetos">
+  <h2>Projetos</h2>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/marketing-analytics-agent">marketing-analytics-agent</a></h3>
+    <p>Agente com LLM (Gemini, Google ADK) que responde perguntas em português sobre um CSV de campanhas, chamando funções Python (tool calling) para calcular e montar gráficos. <a href="https://www.youtube.com/watch?v=8IW4VXle3JQ">Demo de 6 min</a></p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/aml-transaction-monitoring">aml-transaction-monitoring</a></h3>
+    <p>Lavagem de dinheiro em 5 milhões de transações (base pública IBM HI-Small, 0,18% de lavagem no teste). XGBoost com validação temporal: PR-AUC 0,389 (acaso: 0,002), precisão de 0,98 nas 100 maiores notas e recall de 0,81 com 5% de falsos positivos. API em FastAPI, Docker e CI.</p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/credit-risk-pipeline">credit-risk-pipeline</a></h3>
+    <p>Crédito PF do SQL ao modelo, com pipeline do scikit-learn sem vazamento. AUC 0,795 no teste; a acurácia fica de fora porque um baseline que só diz "não vai dar calote" já acerta 92%.</p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/envelhecimento-ativo-pns2019">envelhecimento-ativo-pns2019</a></h3>
+    <p>Microdados da PNS 2019 (IBGE) em pandas e PySpark, com peso amostral, bootstrap, K-Means e random forest com SHAP (AUC 0,849). Corrigi cerca de 20 colunas lidas da pergunta errada, conferindo o dicionário do IBGE, com testes.</p>
+  </article>
+
+  <article class="so-web">
+    <h3><a href="https://github.com/gaab-braga/turnover-explainable-ml">turnover-explainable-ml</a></h3>
+    <p>Turnover com indicadores criados, random forest, SHAP e curva de Kaplan-Meier. No teste: AUC 0,771, precisão 0,44 e recall 0,20 para quem saiu; a acurácia (0,83) perde para quem chuta "ninguém sai" (0,84).</p>
+  </article>
+
+  <article class="so-web">
+    <h3><a href="https://github.com/gaab-braga/hr-attrition-analytics">hr-attrition-analytics</a></h3>
+    <p>Turnover na base IBM HR, com classificadores validados em CV estratificada, regressão logística com odds ratio e intervalo de confiança, e dashboard em Dash.</p>
+  </article>
+
+  <article class="so-web">
+    <h3><a href="https://github.com/gaab-braga/meta-ads-creative-analytics">meta-ads-creative-analytics</a></h3>
+    <p>Criativos de Meta Ads (dados fictícios): teste t e d de Cohen entre grupos, modelos de ROAS validados em CV de 5 dobras (R² de 0,34) e testes com pytest.</p>
+  </article>
+
+  <article class="so-web">
+    <h3><a href="https://github.com/gaab-braga/dre-etl-pipeline">dre-etl-pipeline</a></h3>
+    <p>Pipeline de DRE em camadas (raw, stg e dw) no PostgreSQL, com checagens de qualidade e uma API em FastAPI.</p>
+  </article>
+</section>
+
+<section>
+  <h2>Formação</h2>
+  <div class="linha">
+    <h3>Bacharelado em Engenharia de Software · IESB</h3>
+    <span class="data">previsão dez/2027</span>
+  </div>
+</section>
+
+<section>
+  <h2>Certificações</h2>
+  <ul class="certificados">
+    <li>
+      <div class="linha"><span><b>Deep Learning Specialization</b> · DeepLearning.AI (Coursera) · 5 cursos (embeddings, atenção, Transformers) · <a href="https://coursera.org/verify/specialization/1CIMVX8IUS8D">certificado</a><span class="so-web"> · <a href="https://github.com/gaab-braga/DeepLearning-Specialization">exercícios</a></span></span><span class="data">mai/2025</span></div>
+    </li>
+    <li>
+      <div class="linha"><span><b>Machine Learning Specialization</b> · Stanford e DeepLearning.AI (Coursera) · 3 cursos · <a href="https://coursera.org/verify/specialization/RJ9FEWHG97LC">certificado</a><span class="so-web"> · <a href="https://github.com/gaab-braga/ML-Specialization">exercícios</a></span></span><span class="data">fev/2025</span></div>
+    </li>
+    <li>
+      <div class="linha"><span><b>Inteligência Artificial Generativa</b> · IESB (curso livre)</span><span class="data">set – out/2025</span></div>
+    </li>
+    <li class="so-web">
+      <div class="linha"><span><b>Microsoft Azure Machine Learning</b> · Microsoft (Coursera) · 2 cursos</span><span class="data">out/2026</span></div>
+    </li>
+    <li>
+      <div class="linha"><span><b>Formação em Data Science</b> · Preditiva Analytics · 5 cursos</span><span class="data">jun/2024 – jan/2025</span></div>
+    </li>
+    <li class="so-web">
+      <div class="linha"><span><b>Data Science Aplicado à Finanças</b> · Escola Politécnica da USP</span><span class="data">ago/2026</span></div>
+    </li>
+    <li class="so-web">
+      <div class="linha"><span><b>ETL and Data Pipelines with Shell, Airflow and Kafka</b> · IBM (Coursera) · <a href="https://coursera.org/verify/O4G4AV7AEBNU">certificado</a></span><span class="data">fev/2025</span></div>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Prêmios</h2>
+  <ul class="corrida">
+    <li>Hackathon IDP, 4ª edição (CTF): medalha de prata · nov/2024</li>
+    <li>Menção honrosa na OBMEP e na OMDF</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ferramentas e idiomas</h2>
+  <ul class="ferramentas corrida">
+    <li><b>ML e estatística:</b> scikit-learn (validação cruzada e temporal, precisão, recall, AUC), XGBoost, SHAP, statsmodels, TensorFlow</li>
+    <li><b>IA generativa:</b> Gemini com Google ADK, tool calling, avaliação de respostas por script</li>
+    <li><b>Dados e engenharia:</b> Python (pandas, NumPy), SQL, PySpark, Git, pytest, FastAPI, Docker</li>
+    <li><b>Idiomas:</b> português nativo, inglês com fluência profissional</li>
+  </ul>
+</section>
+
+<footer class="so-web">Atualizado em nov/2026 · <a href="./">Versão com foco em FP&amp;A</a></footer>
+
+</main>
+</body>
+</html>
