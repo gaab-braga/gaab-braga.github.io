@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gabriel Braga · Currículo</title>
-<meta name="description" content="Currículo de Gabriel Braga, analista de dados em FP&A em Brasília.">
+<meta name="description" content="Currículo de Gabriel Braga, analista de dados em FP&A e machine learning em Brasília.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
 <header>
   <h1>Gabriel Braga</h1>
-  <p class="cargo">Analista de dados em FP&amp;A · Brasília, DF</p>
+  <p class="cargo">Analista de dados · FP&amp;A e machine learning · Brasília, DF</p>
   <p class="contatos">
     <a href="mailto:gafebraga@gmail.com">gafebraga@gmail.com</a>
     <a href="https://github.com/gaab-braga">github.com/gaab-braga</a>
@@ -23,7 +23,7 @@
 
 <section>
   <h2>Resumo</h2>
-  <p>Trabalho com FP&amp;A usando Python (pandas, scikit-learn), SQL, Power BI e Excel. Gosto de transformar planilha em pipeline que dá para testar: na DRE que construí, o resultado em Python bate com o Excel da área célula a célula.</p>
+  <p>Sou Analista de Inteligência e Performance na Concept, onde ajudo a estruturar a área de FP&amp;A: pipelines de dados, indicadores financeiros, cenários e forecast. Trabalho com Python (pandas, scikit-learn), SQL, Power BI e Excel, e gosto de transformar planilha em pipeline que dá para testar.</p>
   <p>Em modelos, cuido primeiro da validação: separo treino e teste antes de tudo, valido no tempo quando o dado é série temporal e comparo com um baseline simples. Com IA generativa, construí um agente em Google ADK com Gemini que analisa dados chamando funções Python, e avaliei um agente rodando o mesmo pedido com e sem uma skill, com as respostas corrigidas por script.</p>
 </section>
 
@@ -32,13 +32,15 @@
 
   <article>
     <div class="linha">
-      <h3>[PENDENTE: cargo] · Concept (Wiz Co)</h3>
-      <span class="data">[PENDENTE: início] – atual</span>
+      <h3>Analista de Inteligência e Performance · Concept IaaS (Wiz Co)</h3>
+      <span class="data">fev/2026 – atual</span>
     </div>
+    <p class="nota">Estruturação da área de FP&amp;A.</p>
     <ul>
       <li>Construí em Python o pipeline da DRE gerencial: lê o Excel da área, aplica os rateios e publica no Power BI. Uma suíte de testes confere a cada fechamento que o resultado bate com a planilha célula a célula.</li>
       <li>Desenvolvi a coluna de forecast da DRE. Validei por backtest no tempo (treino no passado, teste nos meses seguintes) e escolhi o método de cada linha pelo erro em reais (WAPE) e pelo MASE contra um baseline ingênuo. O gradient boosting testado perdeu para as regras simples em 8 de 8 linhas, e a decisão ficou documentada com o critério para reabrir.</li>
       <li>Passei a guardar a previsão antes de o mês fechar, e um backtest recalcula o erro de cada linha a cada ciclo.</li>
+      <li>Acompanho o desempenho e o atingimento de metas por produto e por cliente, e monto cenários para apoiar decisões da diretoria.</li>
       <li>Avaliei um agente de IA (uma skill do Claude Code) em 3 cenários, com 3 execuções de cada, com e sem a skill. As respostas eram corrigidas por script: 92% de acerto com a skill e 83% sem.</li>
       <li>Automatizei rotinas da área em Python, Power Query e VBA: controle de estoque com entrada por XML de NF-e e geração de títulos de pagamento.</li>
     </ul>
@@ -46,13 +48,13 @@
 
   <article>
     <div class="linha">
-      <h3>Analista de Dados e BI [PENDENTE: estágio?] · Ministério das Relações Exteriores</h3>
-      <span class="data">[PENDENTE: abr ou mai]/2025 – [PENDENTE: fim]</span>
+      <h3>Analista de Dados · Ministério das Relações Exteriores</h3>
+      <span class="data">abr/2025 – fev/2026</span>
     </div>
     <ul>
       <li>Automatizei processos com Python (pandas) e Power Automate. O prazo de atendimento (SLA) caiu de 3 dias para 4 horas.</li>
-      <li>Construí dashboards no Power BI para acompanhar a execução orçamentária e os indicadores financeiros.</li>
-      <li>Organizei e analisei dados com SQL e Dataverse para o planejamento orçamentário.</li>
+      <li>Construí dashboards no Power BI (DAX) para acompanhar a execução orçamentária global.</li>
+      <li>Cuidei da qualidade das bases financeiras e contábeis com consultas SQL e modelos no Dataverse.</li>
     </ul>
   </article>
 
@@ -62,8 +64,7 @@
       <span class="data">dez/2025</span>
     </div>
     <ul>
-      <li>Montei o acompanhamento de indicadores de campanha (ROAS, CPA, CTR) e a análise dos criativos.</li>
-      <li>Criei dashboards interativos para encontrar os padrões dos criativos com melhor desempenho. <a href="https://github.com/gaab-braga/meta-ads-creative-analytics">Repositório</a></li>
+      <li>Montei o acompanhamento de indicadores de campanha (ROAS, CPA, CTR) e a análise dos criativos, com dashboards interativos.</li>
     </ul>
   </article>
 </section>
@@ -95,43 +96,127 @@
     <h3><a href="https://github.com/gaab-braga/hr-attrition-analytics">hr-attrition-analytics</a></h3>
     <p>Turnover na base IBM HR, com classificadores validados em CV estratificada e dashboard em Dash. Na revisão, passei a prever os funcionários ativos fora da dobra: antes todos apareciam com risco baixo; depois, 101 aparecem com risco médio ou maior.</p>
   </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/meta-ads-creative-analytics">meta-ads-creative-analytics</a></h3>
+    <p>Criativos de Meta Ads (1.000 criativos, dados fictícios): comparação entre grupos com teste t e modelos de ROAS validados em CV de 5 dobras (R² de 0,34). Dashboard em Dash e testes com pytest.</p>
+  </article>
 </section>
 
 <section>
   <h2>Formação</h2>
   <div class="linha">
-    <h3>Engenharia de Software · IESB</h3>
-    <span class="data">2024 – previsão dez/2027</span>
+    <h3>Bacharelado em Engenharia de Software · [PENDENTE: IDP ou IESB]</h3>
+    <span class="data">2024 – 2027</span>
   </div>
-  <p>Iniciada no IDP em 2023, com transferência para o IESB.</p>
 </section>
 
 <section>
-  <h2>Cursos e certificações</h2>
-  <ul class="cursos">
-    <li><strong>Deep Learning Specialization</strong> (5 cursos) · DeepLearning.AI, Coursera · mai/2025 · <a href="https://coursera.org/verify/specialization/1CIMVX8IUS8D">certificado</a> · <a href="https://github.com/gaab-braga/DeepLearning-Specialization">repositório</a></li>
-    <li><strong>Machine Learning Specialization</strong> (3 cursos) · Stanford e DeepLearning.AI, Coursera · fev/2025 · <a href="https://coursera.org/verify/specialization/RJ9FEWHG97LC">certificado</a> · <a href="https://github.com/gaab-braga/ML-Specialization">repositório</a></li>
-    <li><strong>ETL and Data Pipelines with Shell, Airflow and Kafka</strong> · IBM, Coursera · fev/2025 · <a href="https://coursera.org/verify/O4G4AV7AEBNU">certificado</a></li>
-    <li><strong>Data Science</strong> · Preditiva · 160 h · jan/2025</li>
-    <li><strong>Data Analytics</strong> · Preditiva · 70 h · dez/2024</li>
-    <li><strong>Santander Tech+ Data Science</strong> · Ada · 11 h · dez/2024</li>
-    <li><strong>Power BI para Análise de Dados</strong> · Preditiva · 12 h · ago/2024</li>
-    <li><strong>Excel para Análise de Dados</strong> · Preditiva · 12 h · jul/2024</li>
-    <li><strong>MySQL</strong> · Curso em Vídeo · 40 h · jul/2024</li>
-    <li><strong>Introduction to Microsoft Copilot</strong> · DataCamp · 3 h · abr/2025</li>
-    <li><strong>Inteligência Artificial e Produtividade</strong> · Google · 4 h · jul/2024</li>
-    <li><strong>Hackathon IDP, 4ª edição</strong> · IDP · 26 h · nov/2024</li>
+  <h2 id="cursos">Cursos e certificações</h2>
+
+  <article>
+    <div class="linha">
+      <h3>Deep Learning Specialization · DeepLearning.AI (Coursera)</h3>
+      <span class="data">mai/2025</span>
+    </div>
+    <p class="nota">Especialização completa, com 5 cursos. <a href="https://coursera.org/verify/specialization/1CIMVX8IUS8D">Certificado</a> · <a href="https://github.com/gaab-braga/DeepLearning-Specialization">Repositório com os exercícios</a></p>
+    <ul>
+      <li>Neural Networks and Deep Learning · mar/2025</li>
+      <li>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization · mar/2025</li>
+      <li>Structuring Machine Learning Projects · mar/2025</li>
+      <li>Convolutional Neural Networks · abr/2025</li>
+      <li>Sequence Models · abr/2025</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Machine Learning Specialization · Stanford e DeepLearning.AI (Coursera)</h3>
+      <span class="data">fev/2025</span>
+    </div>
+    <p class="nota">Especialização completa, com 3 cursos. <a href="https://coursera.org/verify/specialization/RJ9FEWHG97LC">Certificado</a> · <a href="https://github.com/gaab-braga/ML-Specialization">Repositório com os exercícios</a></p>
+    <ul>
+      <li>Supervised Machine Learning: Regression and Classification · jan/2025</li>
+      <li>Advanced Learning Algorithms · fev/2025</li>
+      <li>Unsupervised Learning, Recommenders, Reinforcement Learning · fev/2025</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Data Science Aplicado à Finanças · Escola Politécnica da USP</h3>
+      <span class="data">ago/2026</span>
+    </div>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Microsoft Azure Machine Learning · Microsoft (Coursera)</h3>
+      <span class="data">out/2026</span>
+    </div>
+    <ul>
+      <li>Create Machine Learning Models in Microsoft Azure</li>
+      <li>Microsoft Azure Machine Learning for Data Scientists</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Inteligência Artificial Generativa · IESB (curso livre)</h3>
+      <span class="data">set – out/2025</span>
+    </div>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>ETL and Data Pipelines with Shell, Airflow and Kafka · IBM (Coursera)</h3>
+      <span class="data">fev/2025</span>
+    </div>
+    <p class="nota"><a href="https://coursera.org/verify/O4G4AV7AEBNU">Certificado</a></p>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Formação em Data Science · Preditiva Analytics</h3>
+      <span class="data">jun/2024 – jan/2025</span>
+    </div>
+    <ul>
+      <li>Data Science · 160 h · jan/2025</li>
+      <li>Data Analytics · 70 h · dez/2024</li>
+      <li>Data Analytics Fundamentals · ago/2024</li>
+      <li>Power BI para Análise de Dados · 12 h · ago/2024</li>
+      <li>Excel para Análise de Dados · 12 h · jul/2024</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Outros cursos</h3>
+    <ul>
+      <li>Santander Tech+ Data Science · Ada · 11 h · dez/2024</li>
+      <li>Introduction to Microsoft Copilot · DataCamp · 3 h · abr/2025</li>
+      <li>MySQL · Curso em Vídeo · 40 h · jul/2024</li>
+      <li>Google: Inteligência Artificial e Produtividade · Santander Open Academy · 4 h · jul/2024</li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <h2>Prêmios e eventos</h2>
+  <ul>
+    <li>Hackathon IDP, 4ª edição (CTF): medalha de prata · nov/2024</li>
+    <li>Startup Weekend · IDP · jun/2024</li>
+    <li>Menção honrosa na OBMEP e na OMDF (olimpíadas de matemática)</li>
   </ul>
 </section>
 
 <section>
   <h2>Ferramentas</h2>
-  <p>Python (pandas, NumPy, scikit-learn, XGBoost) · SQL e PostgreSQL · FastAPI · Docker · Google ADK e Gemini · Power BI · Excel, Power Query e VBA · Power Automate</p>
+  <p>Python (pandas, NumPy, scikit-learn, XGBoost, TensorFlow) · SQL e PostgreSQL · FastAPI · Docker · Google ADK e Gemini · Power BI e DAX · Excel, Power Query e VBA · Power Automate</p>
 </section>
 
 <section>
   <h2>Idiomas</h2>
-  <p>Português nativo · Inglês avançado</p>
+  <p>Português nativo · Inglês com fluência profissional</p>
 </section>
 
 <footer>Atualizado em nov/2026</footer>
