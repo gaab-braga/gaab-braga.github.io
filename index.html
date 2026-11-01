@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriel Braga · Currículo</title>
+<meta name="description" content="Currículo de Gabriel Braga, analista de dados em FP&A em Brasília.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Gabriel Braga</h1>
+  <p class="cargo">Analista de dados em FP&amp;A · Brasília, DF</p>
+  <p class="contatos">
+    <a href="mailto:gafebraga@gmail.com">gafebraga@gmail.com</a>
+    <a href="https://github.com/gaab-braga">github.com/gaab-braga</a>
+    <a href="https://www.linkedin.com/in/gabrielfebraga">linkedin.com/in/gabrielfebraga</a>
+  </p>
+  <button type="button" class="imprimir" onclick="window.print()">Salvar em PDF</button>
+</header>
+
+<section>
+  <h2>Resumo</h2>
+  <p>Trabalho com FP&amp;A usando Python (pandas, scikit-learn), SQL, Power BI e Excel. Gosto de transformar planilha em pipeline que dá para testar: na DRE que construí, o resultado em Python bate com o Excel da área célula a célula.</p>
+  <p>Em modelos, cuido primeiro da validação: separo treino e teste antes de tudo, valido no tempo quando o dado é série temporal e comparo com um baseline simples. Com IA generativa, construí um agente em Google ADK com Gemini que analisa dados chamando funções Python, e avaliei um agente rodando o mesmo pedido com e sem uma skill, com as respostas corrigidas por script.</p>
+</section>
+
+<section>
+  <h2>Experiência</h2>
+
+  <article>
+    <div class="linha">
+      <h3>[PENDENTE: cargo] · Concept (Wiz Co)</h3>
+      <span class="data">[PENDENTE: início] – atual</span>
+    </div>
+    <ul>
+      <li>Construí em Python o pipeline da DRE gerencial: lê o Excel da área, aplica os rateios e publica no Power BI. Uma suíte de testes confere a cada fechamento que o resultado bate com a planilha célula a célula.</li>
+      <li>Desenvolvi a coluna de forecast da DRE. Validei por backtest no tempo (treino no passado, teste nos meses seguintes) e escolhi o método de cada linha pelo erro em reais (WAPE) e pelo MASE contra um baseline ingênuo. O gradient boosting testado perdeu para as regras simples em 8 de 8 linhas, e a decisão ficou documentada com o critério para reabrir.</li>
+      <li>Passei a guardar a previsão antes de o mês fechar, e um backtest recalcula o erro de cada linha a cada ciclo.</li>
+      <li>Avaliei um agente de IA (uma skill do Claude Code) em 3 cenários, com 3 execuções de cada, com e sem a skill. As respostas eram corrigidas por script: 92% de acerto com a skill e 83% sem.</li>
+      <li>Automatizei rotinas da área em Python, Power Query e VBA: controle de estoque com entrada por XML de NF-e e geração de títulos de pagamento.</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Analista de Dados e BI [PENDENTE: estágio?] · Ministério das Relações Exteriores</h3>
+      <span class="data">[PENDENTE: abr ou mai]/2025 – [PENDENTE: fim]</span>
+    </div>
+    <ul>
+      <li>Automatizei processos com Python (pandas) e Power Automate. O prazo de atendimento (SLA) caiu de 3 dias para 4 horas.</li>
+      <li>Construí dashboards no Power BI para acompanhar a execução orçamentária e os indicadores financeiros.</li>
+      <li>Organizei e analisei dados com SQL e Dataverse para o planejamento orçamentário.</li>
+    </ul>
+  </article>
+
+  <article>
+    <div class="linha">
+      <h3>Freelance de analytics (Meta Ads) · Brasal</h3>
+      <span class="data">dez/2025</span>
+    </div>
+    <ul>
+      <li>Montei o acompanhamento de indicadores de campanha (ROAS, CPA, CTR) e a análise dos criativos.</li>
+      <li>Criei dashboards interativos para encontrar os padrões dos criativos com melhor desempenho. <a href="https://github.com/gaab-braga/meta-ads-creative-analytics">Repositório</a></li>
+    </ul>
+  </article>
+</section>
+
+<section>
+  <h2>Projetos</h2>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/aml-transaction-monitoring">aml-transaction-monitoring</a></h3>
+    <p>Detecção de lavagem de dinheiro em 5 milhões de transações (base pública IBM HI-Small, 0,18% de lavagem no teste). XGBoost com validação temporal 80/20: PR-AUC de 0,389 (o acaso daria 0,002) e ROC-AUC de 0,953. Das 100 transações com maior risco, 98 eram lavagem, e o modelo encontra 81% das lavagens com 5% de falsos positivos. API em FastAPI, Docker e CI com testes.</p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/marketing-analytics-agent">marketing-analytics-agent</a></h3>
+    <p>Agente em Google ADK com Gemini (Vertex AI) que responde perguntas em português sobre um CSV de campanhas, chamando funções Python para calcular e montar os gráficos. Interface em Chainlit. <a href="https://www.youtube.com/watch?v=8IW4VXle3JQ">Demo de 6 min</a></p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/dre-etl-pipeline">dre-etl-pipeline</a></h3>
+    <p>Pipeline de DRE em camadas (raw, stg e dw) no PostgreSQL, com checagens de qualidade e uma API em FastAPI para subir o Excel e consultar o resultado.</p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/credit-risk-pipeline">credit-risk-pipeline</a></h3>
+    <p>Crédito PF da extração em SQL ao modelo: limpeza com pandas e pipeline do scikit-learn sem vazamento, numa base sintética com problemas plantados e um gabarito para conferir a limpeza. No teste: AUC de 0,795, Gini de 0,59 e KS de 0,44.</p>
+  </article>
+
+  <article>
+    <h3><a href="https://github.com/gaab-braga/hr-attrition-analytics">hr-attrition-analytics</a></h3>
+    <p>Turnover na base IBM HR, com classificadores validados em CV estratificada e dashboard em Dash. Na revisão, passei a prever os funcionários ativos fora da dobra: antes todos apareciam com risco baixo; depois, 101 aparecem com risco médio ou maior.</p>
+  </article>
+</section>
+
+<section>
+  <h2>Formação</h2>
+  <div class="linha">
+    <h3>Engenharia de Software · IESB</h3>
+    <span class="data">2024 – previsão dez/2027</span>
+  </div>
+  <p>Iniciada no IDP em 2023, com transferência para o IESB.</p>
+</section>
+
+<section>
+  <h2>Cursos e certificações</h2>
+  <ul class="cursos">
+    <li><strong>Deep Learning Specialization</strong> (5 cursos) · DeepLearning.AI, Coursera · mai/2025 · <a href="https://coursera.org/verify/specialization/1CIMVX8IUS8D">certificado</a> · <a href="https://github.com/gaab-braga/DeepLearning-Specialization">repositório</a></li>
+    <li><strong>Machine Learning Specialization</strong> (3 cursos) · Stanford e DeepLearning.AI, Coursera · fev/2025 · <a href="https://coursera.org/verify/specialization/RJ9FEWHG97LC">certificado</a> · <a href="https://github.com/gaab-braga/ML-Specialization">repositório</a></li>
+    <li><strong>ETL and Data Pipelines with Shell, Airflow and Kafka</strong> · IBM, Coursera · fev/2025 · <a href="https://coursera.org/verify/O4G4AV7AEBNU">certificado</a></li>
+    <li><strong>Data Science</strong> · Preditiva · 160 h · jan/2025</li>
+    <li><strong>Data Analytics</strong> · Preditiva · 70 h · dez/2024</li>
+    <li><strong>Santander Tech+ Data Science</strong> · Ada · 11 h · dez/2024</li>
+    <li><strong>Power BI para Análise de Dados</strong> · Preditiva · 12 h · ago/2024</li>
+    <li><strong>Excel para Análise de Dados</strong> · Preditiva · 12 h · jul/2024</li>
+    <li><strong>MySQL</strong> · Curso em Vídeo · 40 h · jul/2024</li>
+    <li><strong>Introduction to Microsoft Copilot</strong> · DataCamp · 3 h · abr/2025</li>
+    <li><strong>Inteligência Artificial e Produtividade</strong> · Google · 4 h · jul/2024</li>
+    <li><strong>Hackathon IDP, 4ª edição</strong> · IDP · 26 h · nov/2024</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ferramentas</h2>
+  <p>Python (pandas, NumPy, scikit-learn, XGBoost) · SQL e PostgreSQL · FastAPI · Docker · Google ADK e Gemini · Power BI · Excel, Power Query e VBA · Power Automate</p>
+</section>
+
+<section>
+  <h2>Idiomas</h2>
+  <p>Português nativo · Inglês avançado</p>
+</section>
+
+<footer>Atualizado em nov/2026</footer>
+
+</main>
+</body>
+</html>
